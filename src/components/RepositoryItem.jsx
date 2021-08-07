@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import Text from './Text';
 
 const RepositoryItem = props => (
     <View>
-        <Text>Full name: {props.title}</Text>
+        <Text color={'primary'}>Full name: {props.title}</Text>
         <Text>Description: {props.description}</Text>
         <Text>Language: {props.language}</Text>
         <Text>Stars: {props.stargazersCount}</Text>
