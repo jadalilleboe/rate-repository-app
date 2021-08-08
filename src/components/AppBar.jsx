@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, Pressable, Alert } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import { Link } from 'react-router-native';
 import Text from './Text';
 import Constants from 'expo-constants';
 
@@ -14,9 +15,14 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
   <View style={styles.container}>
-      <Pressable onPress={() => Alert.alert('repository pressed')}>
+    <ScrollView horizontal>
+      <Link to='/'>
         <Text fontSize='heading' color='appBar' padding='paddingAround'>Repositories</Text>
-      </Pressable>
+      </Link>
+      <Link to='/signin'>
+        <Text fontSize='heading' color='appBar' padding='paddingAround'>Sign In</Text>
+      </Link>
+    </ScrollView>
   </View>);
 };
 
