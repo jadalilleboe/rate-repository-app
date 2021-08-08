@@ -16,6 +16,9 @@ const styles = StyleSheet.create({
   colorPrimary: {
     color: theme.colors.primary,
   },
+  backgroundColorPrimary: {
+    backgroundColor: theme.colors.primary
+  },
   colorAppBar: {
     color: theme.colors.appBar
   },
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Text = ({ color, fontSize, fontWeight, style, padding, ...props }) => {
+const Text = ({ color, fontSize, fontWeight, style, padding, backgroundColor, ...props }) => {
   const textStyle = [
     styles.text,
     color === 'textSecondary' && styles.colorTextSecondary,
@@ -44,6 +47,7 @@ const Text = ({ color, fontSize, fontWeight, style, padding, ...props }) => {
     fontWeight === 'bold' && styles.fontWeightBold,
     style,
     padding === 'paddingAround' && styles.paddingAround,
+    backgroundColor === 'primary' && styles.backgroundColorPrimary
   ];
 
   return <NativeText style={textStyle} {...props} />;
